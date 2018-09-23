@@ -1,5 +1,19 @@
 import csv
 import random
+import sys
+import os.path
+
+def handle_input():
+    if len(sys.argv[1:]) == 0:
+        print("Error: no argument has been provided! Please provide the path of the \
+            dataset you chose to use.")
+        sys.exit(1)
+    else:
+        if not os.path.exists(sys.argv[1]):
+            print("Error: file name provided not related to a file!")
+            sys.exit(1)
+        else:
+            return sys.argv[1]
 
 def read_dataset_from_csv(csv_name, delimiter=","):
     lst = []

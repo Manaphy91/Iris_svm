@@ -57,16 +57,18 @@ def best_poly(mat, res):
 
     print_recap(('C', 'degree'), comb, metrics)
 
-
 if __name__ == "__main__":
+
+    dataset = datalib.handle_input()
+
     training, testing = datalib.shuffle_and_split_dataset( \
-        datalib.read_dataset_from_csv('iris.data'))
+        datalib.read_dataset_from_csv(dataset))
     
     mat, res = datalib.split_dataset(training)
     
     mat = datalib.strings_to_numbers(mat)
 
-    best_rbf(mat, res) 
+    best_rbf(mat, res)
 
     best_linear(mat, res)
 
