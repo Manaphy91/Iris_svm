@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     print("Dataset name: {}\nKernel type: {}\ngamma parameter value: {}\
         \nC parameter value: {}".format("semeion.data", "linear", 0.01, 1))
-    print("Accuracy: {}".format((learner.score(mat, res) * 100.0)))
+    print("Accuracy: {}".format(learner.score(mat, res)))
     print("Classification report:\n")
     print(classification_report(res, predicted))

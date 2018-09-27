@@ -64,7 +64,7 @@ def shuffle_and_split_dataset(dataset):
     '''
     split_ok = False
 
-    SEED = 43
+    SEED = 53
     random.seed(SEED)
 
     while not split_ok:
