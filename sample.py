@@ -89,6 +89,9 @@ def get_best_params(model_func, mat, res, params_names, params_values):
         
         pbar.update(1)
 
+        if metrics['accuracy'] == 100.0:
+            break
+
     pbar.close()
 
     # get index of model that produced best metrics

@@ -10,12 +10,12 @@ recall_score, f1_score
 
 if __name__ == "__main__":
 
-    learner = svm.SVC(kernel='rbf', gamma=0.01, C=10)
-
     training, testing = datalib.shuffle_and_split_dataset(
-        datalib.read_dataset_from_csv('semeion.data'))
+        datalib.read_dataset_from_csv('winequality-red.csv'))
 
     mat, res = datalib.split_dataset(training)
+
+    learner = svm.SVC(kernel='rbf', gamma=10, C=1)
 
     mat = datalib.strings_to_numbers(mat)
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     predicted = learner.predict(mat)
 
     print("Dataset name: {}\nKernel type: {}\ngamma parameter value: {}\
-        \nC parameter value: {}".format("semeion.data", "rbf", 0.01, 1))
+        \nC parameter value: {}".format("winequality-red.csv", "rbf", 10, 1))
     print("Accuracy: {}".format(learner.score(mat, res)))
     print("Classification report:\n")
     print(classification_report(res, predicted))
